@@ -7,14 +7,14 @@ import { Link } from 'react-router-dom';
 const Admin = () => {
     const [allVolunteers, setAllVolunteers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/getAllVolunteer')
+        fetch('https://obscure-springs-24659.herokuapp.com/getAllVolunteer')
         .then(response => response.json())
         .then(data => setAllVolunteers(data))
-    }, [])
+    }, [allVolunteers])
 
     const deleteVolunteer = listId =>{
         console.log(listId)
-        fetch(`http://localhost:5000/deleteVlunteerList/${listId}`, {
+        fetch(`https://obscure-springs-24659.herokuapp.com/deleteVlunteerList/${listId}`, {
             method: 'DELETE'
         })
             .then(response => response.json())
