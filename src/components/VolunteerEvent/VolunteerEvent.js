@@ -11,15 +11,15 @@ const VolunteerEvent = () => {
     const [loggedInUser, setLoggedInUser] = allLogin
 
     useEffect(() => {
-        fetch('https://obscure-springs-24659.herokuapp.com/getvolunteer?email='+loggedInUser.email)
+        fetch('http://localhost:5000/getvolunteer?email='+loggedInUser.email)
         .then(response => response.json())
             .then(data => setVolunteerEvents(data))
-    }, [volunteerEvents])
+    }, [])
 
     // delete volunteer event
     const deleteVolunEvent = id => {
         console.log(id)
-        fetch(`https://obscure-springs-24659.herokuapp.com/delete/${id}`, {
+        fetch(`http://localhost:5000/delete/${id}`, {
             method: 'DELETE'
         })
             .then(response => response.json())

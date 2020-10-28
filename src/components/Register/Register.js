@@ -8,7 +8,7 @@ const Register = () => {
     const history = useHistory()
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch('https://obscure-springs-24659.herokuapp.com/addvolunteer', {
+        fetch('http://localhost:5000/addvolunteer', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
